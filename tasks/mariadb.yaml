@@ -1,0 +1,11 @@
+- name: Install {{db}}
+  apt:
+    name: "{{db}}"
+    state: present
+
+- name: Start and enable {{db_svc}} service
+  service:
+     name: "{{db_svc}}"
+     state: started
+     enabled: yes
+

@@ -1,0 +1,17 @@
+- name: Install PHP
+  apt:
+    name: php
+    state: present
+  notify: restart "{{web}}"
+
+- name: Install PHP modules
+  apt:
+    name: "{{ item }}"
+    state: present
+  loop:
+        - php-mysql
+        - php-cli
+        - php-gd
+        - php-xml
+        - php-mbstring
+  notify: restart "{{web}}"

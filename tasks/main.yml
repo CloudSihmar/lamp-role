@@ -1,0 +1,5 @@
+---
+# tasks file for sandeep-role
+- include_tasks: apache2.yaml
+- include_tasks: php.yaml
+- include_tasks: mariadb.yaml
